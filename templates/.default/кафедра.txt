@@ -1,0 +1,27 @@
+
+			<p> <? for ( $i = 0; $i <= count($original); $i++)
+			{
+				if ($original[$i]->Kafedra == $selected)
+				{
+
+					$code = $original[$i]->SpecialityCodeOKSO;
+
+					echo '<div class="card">'.
+					'<div class="container">' .
+						"<b>" . ($original[$i]->SpecialityName) . " " . ($original[$i]->SpecialityCodeOKSO)  . "</b>";
+
+
+							if ($original[$i]->ProfilName != "")
+										{
+											echo "<p>" . "Профиль: " .$original[$i]->ProfilName . "\n";
+										} 
+								
+							echo	"<p>" . "Возможные формы обучения: " .$original[$i]->EducationFormName. "\n". 
+									"<p>" . "Ученая степень: " . $original[$i]->EducationLevelRef->ReferenceName . "\n".
+									"<p>" . "Форма набора: " .$original[$i]->FinanceName . "\n".
+									"</p>".
+							"</div>".
+							"</div>";
+				}
+			}
+			?></p>
